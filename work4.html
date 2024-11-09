@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Class Inheritance Example</title>
+</head>
+
+<body>
+    <p id="greetings"></p>
+    <p id="details"></p>
+
+    <script>
+        class Student {
+            constructor(name) {
+                this.name = name;
+            }
+
+            static hello() {
+                return "Hello";
+            }
+
+            present() {
+                return 'My name is ' + this.name;
+            }
+        }
+
+        class Grade extends Student {
+            constructor(name, grade) {
+                super(name);
+                this.grade = grade;
+            }
+
+            show() {
+                return this.present() + ' from ' + this.grade;
+            }
+        }
+
+        let myStudent = new Grade("Tina", "grade 6");
+        document.getElementById("details").innerHTML = myStudent.show();
+        document.getElementById("greetings").innerHTML = Student.hello();
+    </script>
+</body>
+
+</html>
